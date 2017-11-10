@@ -1,4 +1,4 @@
-![alt text](/WikiResources/Banner.png)
+![alt text](/WikiResources/RundomBanner.png)
 
 **Synopsis**
 --------
