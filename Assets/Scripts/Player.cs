@@ -2,15 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
+    [Header("Player Fields")]
+    int lifes;
+    float attackCooldown;
+    float attackCounter;
+    float speed;
+    bool isDashing;
 
-	// Use this for initialization
-	void Start () {
+    PlayerState currentPlayerState;
+    enum PlayerState
+    {
+        Run,
+        Jump,
+        Dash,
+        Dead
+    }
+
+	void Start ()
+    {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	void Update ()
+    {
+        switch (currentPlayerState)
+        {
+            case PlayerState.Run:
+
+                break;
+
+            case PlayerState.Jump:
+
+                break;
+
+            case PlayerState.Dash:
+
+                break;
+
+            case PlayerState.Dead:
+
+                break;
+
+            default:
+                break;
+        }
+    }
 }
