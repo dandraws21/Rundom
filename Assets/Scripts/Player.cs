@@ -30,23 +30,71 @@ public class Player : MonoBehaviour
         switch (currentPlayerState)
         {
             case PlayerState.Run:
-
+                Run();
                 break;
 
             case PlayerState.Jump:
-
+                Jump();
                 break;
 
             case PlayerState.Dash:
-
+                Dash();
                 break;
 
             case PlayerState.Dead:
-
+                Dead();
                 break;
 
             default:
                 break;
         }
     }
+
+    #region UPDATE METHODS
+
+    void Run()
+    {
+
+    }
+
+    void Jump()
+    {
+
+    }
+
+    void Dash()
+    {
+
+    }
+
+    void Dead()
+    {
+
+    }
+
+    #endregion
+
+    #region STATE METHODS
+
+    void RunState()
+    {
+        currentPlayerState = PlayerState.Run;
+    }
+
+    void JumpState()
+    {
+        currentPlayerState = PlayerState.Jump;
+    }
+
+    void DashState()
+    {
+        currentPlayerState = PlayerState.Dash;
+    }
+
+    void DeadState()
+    {
+        currentPlayerState = PlayerState.Dead;
+    }
+
+    #endregion
 }
