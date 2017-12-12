@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     float attackCounter;
     float speed;
     bool isDashing;
+    Rigidbody2D rb;
 
+    [SerializeField]
     PlayerState currentPlayerState;
     enum PlayerState
     {
@@ -22,7 +24,7 @@ public class Player : MonoBehaviour
 
 	void Start ()
     {
-		
+        rb = GetComponent<Rigidbody2D>();
 	}
 
 	void Update ()
@@ -54,7 +56,7 @@ public class Player : MonoBehaviour
 
     void Run()
     {
-
+        rb.AddForce(new Vector2(1, 0), ForceMode2D.Force);
     }
 
     void Jump()
