@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     void Run()
     {
-        rb.AddForce(new Vector2(1, 0), ForceMode2D.Force);
+
     }
 
     void Jump()
@@ -75,6 +75,11 @@ public class Player : MonoBehaviour
     }
 
     #endregion
+
+    void BeginJump()
+    {
+
+    }
 
     #region STATE METHODS
 
