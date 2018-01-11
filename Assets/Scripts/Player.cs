@@ -8,18 +8,24 @@ public class Player : MonoBehaviour
     int lifes;
     float attackCooldown;
     float attackCounter;
-    float speed;
-    bool isDashing;
+    float speed = 1;
+    float dashSpeed = 3;
+    float dashCooldown = 0.7f;
+    float dashDuration = 0.5f;
+    float dashCounter = 0;
+    float jumpForce = 20;
+    public bool isGrounded;
     Rigidbody2D rb;
+    [SerializeField]
+    BoxCollider2D myCollider;
 
     [SerializeField]
     PlayerState currentPlayerState;
     enum PlayerState
     {
         Run,
-        Jump,
         Dash,
-        Dead
+        Dead,
     }
 
 	void Start ()
@@ -33,10 +39,6 @@ public class Player : MonoBehaviour
         {
             case PlayerState.Run:
                 Run();
-                break;
-
-            case PlayerState.Jump:
-                Jump();
                 break;
 
             case PlayerState.Dash:
@@ -56,17 +58,34 @@ public class Player : MonoBehaviour
 
     void Run()
     {
+        Vector3 provisionalPos;
 
-    }
+        provisionalPos = this.transform.position;
+        provisionalPos.x += speed * Time.deltaTime;
 
-    void Jump()
-    {
-
+        this.transform.position = provisionalPos;
     }
 
     void Dash()
     {
+        Vector3 provisionalPos;
 
+        provisionalPos = this.transform.position;
+        provisionalPos.x += dashSpeed * Time.deltaTime;
+
+        this.transform.position = provisionalPos;
+
+        dashCounter += Time.deltaTime;
+
+        if(dashCounter >= dashDuration)
+        {
+            dashCounter = 0;
+
+            myCollider.size = new Vector3(2, 2, 0);
+            myCollider.offset = new Vector3(0, 1, 0);
+
+            RunState();
+        }
     }
 
     void Dead()
@@ -76,31 +95,71 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    void BeginJump()
-    {
+    #region MECHANICS METHODS
 
+    public void Jump()
+    {
+        if(isGrounded)
+        {
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
     }
+
+    public void BeginDash()
+    {
+        if(isGrounded)
+        {
+            myCollider.size = new Vector3(2, 1, 0);
+            myCollider.offset = new Vector3(0, 0.5f, 0);
+
+            DashState();
+        }
+    }
+
+    #endregion
 
     #region STATE METHODS
 
-    void RunState()
+    public void RunState()
     {
         currentPlayerState = PlayerState.Run;
     }
 
-    void JumpState()
-    {
-        currentPlayerState = PlayerState.Jump;
-    }
-
-    void DashState()
+    public void DashState()
     {
         currentPlayerState = PlayerState.Dash;
     }
 
-    void DeadState()
+    public void DeadState()
     {
         currentPlayerState = PlayerState.Dead;
+    }
+
+    #endregion
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == ("Platform"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == ("Platform"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    #region DRAW GIZMOS
+
+    private void OnDrawGizmosSelected()
+    {
+        //Gizmos.color = Color.red;
+        //Vector3 pos = this.transform.position + (Vector3)groundBoxPos;
+        //Gizmos.DrawWireCube(pos, groundBoxSize);
     }
 
     #endregion
