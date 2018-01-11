@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     float attackCounter;
     float speed = 1;
     float dashSpeed = 3;
-    float dashCooldown = 0.7f;
+    float dashCooldown = 0.5f;
     float dashDuration = 0.5f;
-    float dashCounter = 0;
+    float dashCounter = 0.5f;
     float jumpForce = 20;
     public bool isGrounded;
     Rigidbody2D rb;
@@ -64,6 +64,8 @@ public class Player : MonoBehaviour
         provisionalPos.x += speed * Time.deltaTime;
 
         this.transform.position = provisionalPos;
+
+        dashCounter += Time.deltaTime;
     }
 
     void Dash()
@@ -107,8 +109,10 @@ public class Player : MonoBehaviour
 
     public void BeginDash()
     {
-        if(isGrounded)
+        if(isGrounded && dashCounter >= dashCooldown)
         {
+            dashCounter = 0;
+
             myCollider.size = new Vector3(2, 1, 0);
             myCollider.offset = new Vector3(0, 0.5f, 0);
 
