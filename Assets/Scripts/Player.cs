@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     int lifes;
     float attackCooldown;
     float attackCounter;
-    float speed = 1;
-    float dashSpeed = 3;
+    float speed = 5;
+    float dashSpeed = 7;
     float dashCooldown = 0.5f;
     float dashDuration = 0.5f;
     float dashCounter = 0.5f;
