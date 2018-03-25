@@ -1,15 +1,18 @@
 fileFormatVersion: 2
-guid: 8936df2d4533a8645b409643df6ed530
-timeCreated: 1521998683
+guid: 45fbdce661708eb4ca907682a4467bce
+timeCreated: 1521987120
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Ground_Tiles_0
-    21300002: Ground_Tiles_1
-    21300004: Ground_Tiles_2
-    21300006: Ground_Tiles_3
-    21300008: Ground_Tiles_4
-    21300010: Ground_Tiles_5
+    21300000: Corners_Tiles_0
+    21300002: Corners_Tiles_1
+    21300004: Corners_Tiles_2
+    21300006: Corners_Tiles_3
+    21300008: Corners_Tiles_4
+    21300010: Corners_Tiles_5
+    21300012: Corners_Tiles_6
+    21300014: Corners_Tiles_7
+    21300016: Corners_Tiles_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,7 +50,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 0
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
@@ -87,85 +90,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ground_Tiles_0
+      name: Corners_Tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Corners_Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Corners_Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Corners_Tiles_3
       rect:
         serializedVersion: 2
         x: 0
         y: 256
         width: 256
         height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Ground_Tiles_1
+      name: Corners_Tiles_4
       rect:
         serializedVersion: 2
         x: 256
         y: 256
         width: 256
         height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Ground_Tiles_2
+      name: Corners_Tiles_5
       rect:
         serializedVersion: 2
         x: 512
         y: 256
         width: 256
         height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Ground_Tiles_3
+      name: Corners_Tiles_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 256
-        height: 254
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Ground_Tiles_4
+      name: Corners_Tiles_7
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 256
-        height: 254
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Ground_Tiles_5
+      name: Corners_Tiles_8
       rect:
         serializedVersion: 2
         x: 512
         y: 0
         width: 256
-        height: 254
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
