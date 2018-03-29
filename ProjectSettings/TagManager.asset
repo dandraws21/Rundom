@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - killbox
   layers:
   - Default
   - TransparentFX
@@ -15,14 +16,14 @@ TagManager:
   - 
   - Ground
   - Player
+  - Props
+  - Enemies
+  - Coins
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BG1
+  - BG2
+  - BG3
+  - BG
   - 
   - 
   - 
@@ -40,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 4137297241
+    locked: 0
+  - name: 2ndGround
+    uniqueID: 1378060955
+    locked: 0
+  - name: Ground
+    uniqueID: 3303642849
+    locked: 0
+  - name: Prop
+    uniqueID: 903190737
+    locked: 0
+  - name: Player
+    uniqueID: 3325830235
     locked: 0
