@@ -59,7 +59,6 @@ public class PlayerControlls : MonoBehaviour {
 
     void Update()
     {
-
         //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 

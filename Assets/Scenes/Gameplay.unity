@@ -4411,7 +4411,9 @@ MonoBehaviour:
   treeGenerator: {fileID: 817888576}
   thePlayer: {fileID: 733120287}
   theDeathScreen: {fileID: 1186496205}
+  thePauseMenu: {fileID: 1193680688}
   pauseButton: {fileID: 1850860628}
+  mainMenuLevel: MainMenu
 --- !u!4 &2032034573
 Transform:
   m_ObjectHideFlags: 0

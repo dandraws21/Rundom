@@ -25,8 +25,12 @@ public class GameManager : MonoBehaviour {
     private ScoreManager theScoreManager;
 
     public DeathMenu theDeathScreen;
+    public GameObject thePauseMenu;
     public GameObject pauseButton;
-    
+
+    //Pause Game
+    public string mainMenuLevel;
+
 
     // Use this for initialization
     void Start (){
@@ -43,6 +47,17 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if ((Input.GetKey(KeyCode.R))) // Restart the game
+        {
+            Reset();
+        }
+
+        if ((Input.GetKey(KeyCode.P))) // Pause the game
+        {
+            thePauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            pauseButton.SetActive(false);
+        }
 
     }
 
@@ -80,7 +95,7 @@ public class GameManager : MonoBehaviour {
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
     }
-
+    
     /*public IEnumerator RestartGameCo()
     {
         theScoreManager.scoreIncreasing = false;
