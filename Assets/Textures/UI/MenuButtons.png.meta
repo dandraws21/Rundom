@@ -6,6 +6,10 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: MenuButtons_0
     21300002: MenuButtons_1
+    21300004: MenuButtons_2
+    21300006: MenuButtons_3
+    21300008: MenuButtons_4
+    21300010: MenuButtons_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -83,12 +87,68 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: MenuButtons_1
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 129
+        width: 75
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MenuButtons_2
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 108
+        width: 365
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
       name: MenuButtons_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
-        width: 368
+        y: 110
+        width: 366
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MenuButtons_3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 21
+        width: 75
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MenuButtons_4
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 0
+        width: 121
         height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -97,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: MenuButtons_1
+      name: MenuButtons_5
       rect:
         serializedVersion: 2
-        x: 372
-        y: 24
-        width: 368
-        height: 109
+        x: 877
+        y: 130
+        width: 75
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

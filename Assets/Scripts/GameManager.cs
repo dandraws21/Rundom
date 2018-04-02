@@ -10,12 +10,16 @@ public class GameManager : MonoBehaviour {
     public Transform islandsGenerator;
     public Transform cloudsGenerator;
     public Transform mountsGenerator;
+    public Transform btreeGenerator;
     public Transform treeGenerator;
-    
+    public Transform grassGenerator;    
+
     private Vector3 islandsStartPoint;
     private Vector3 cloudsStartPoint;
     private Vector3 mountsStartPoint;
+    private Vector3 btreeStartPoint;
     private Vector3 treeStartPoint;
+    private Vector3 grassStartPoint;
 
     public PlayerControlls thePlayer;
     private Vector3 playerStartPoint;
@@ -40,7 +44,9 @@ public class GameManager : MonoBehaviour {
         islandsStartPoint = islandsGenerator.position;
         cloudsStartPoint = cloudsGenerator.position;
         mountsStartPoint = mountsGenerator.position;
+        btreeStartPoint = btreeGenerator.position;
         treeStartPoint = treeGenerator.position;
+        grassStartPoint = grassGenerator.position;
 
         theScoreManager = FindObjectOfType<ScoreManager>();
 	}
@@ -87,7 +93,9 @@ public class GameManager : MonoBehaviour {
         islandsGenerator.position = islandsStartPoint;
         cloudsGenerator.position = cloudsStartPoint;
         mountsGenerator.position = mountsStartPoint;
+        btreeGenerator.position = btreeStartPoint;
         treeGenerator.position = treeStartPoint;
+        grassGenerator.position = grassStartPoint;
 
         pauseButton.SetActive(true);
         thePlayer.gameObject.SetActive(true);

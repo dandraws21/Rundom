@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject pauseButton;
 
-
     public void PauseGame()
     {
         Time.timeScale = 0f;

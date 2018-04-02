@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundMoveScript : MonoBehaviour {
 
 	// Background scroll speed can be set in Inspector with slider
-	[Range(1f, 20f)]
+	[Range(1f, 100f)]
 	public float scrollSpeed = 1f;
 
 	// Scroll offset value to smoothly repeat backgrounds movement
