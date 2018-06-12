@@ -5,10 +5,16 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public Text scoreText;
-    public Text hiScoreText;
+    public Text scoreDeathText;
+    //public Text hiScoreText;
+    public Text hiScoreDeathText;
+
+    public Text distanceText;
+    public Text distanceDeathText;
 
     public float scoreCount;
     public float hiScoreCount;
+    public float distanceCount;
 
     public float pointsPerSecond;
 
@@ -16,6 +22,9 @@ public class ScoreManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        distanceCount = 0;
+
         if(PlayerPrefs.HasKey("HighScore")) // Run Save data at game start
         {
             hiScoreCount = PlayerPrefs.GetFloat("HighScore");
@@ -28,6 +37,7 @@ public class ScoreManager : MonoBehaviour {
 
         if(scoreIncreasing)
         {
+            distanceCount += pointsPerSecond * Time.deltaTime;
             scoreCount += pointsPerSecond * Time.deltaTime;
         }
 
@@ -38,7 +48,14 @@ public class ScoreManager : MonoBehaviour {
         }
 
         scoreText.text = "Score: " + Mathf.Round (scoreCount);
-        hiScoreText.text = "HighScore: " + Mathf.Round (hiScoreCount);
+        scoreDeathText.text = "Score: " + Mathf.Round (scoreCount);
+
+        //hiScoreText.text = "HighScore: " + Mathf.Round (hiScoreCount);
+        hiScoreDeathText.text = "HighScore: " + Mathf.Round(hiScoreCount);
+
+
+        distanceText.text = "Distance: " + Mathf.Round (distanceCount);
+        distanceDeathText.text = "Distance: " + Mathf.Round(distanceCount);
 
     }
 

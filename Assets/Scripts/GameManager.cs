@@ -8,13 +8,15 @@ public class GameManager : MonoBehaviour {
     private Vector3 platformStartPoint;
 
     public Transform islandsGenerator;
+    public Transform boatsGenerator;
     public Transform cloudsGenerator;
     public Transform mountsGenerator;
     public Transform btreeGenerator;
     public Transform treeGenerator;
-    public Transform grassGenerator;    
+    public Transform grassGenerator; 
 
     private Vector3 islandsStartPoint;
+    private Vector3 boatsStartPoint;
     private Vector3 cloudsStartPoint;
     private Vector3 mountsStartPoint;
     private Vector3 btreeStartPoint;
@@ -35,6 +37,11 @@ public class GameManager : MonoBehaviour {
     //Pause Game
     public string mainMenuLevel;
 
+    //God Mode
+    private bool GM;
+    public GameObject theCatcher;
+    public GameObject theDestroyer;
+
 
     // Use this for initialization
     void Start (){
@@ -42,20 +49,42 @@ public class GameManager : MonoBehaviour {
         platformStartPoint = platformGenerator.position;
 
         islandsStartPoint = islandsGenerator.position;
+        boatsStartPoint = boatsGenerator.position;
         cloudsStartPoint = cloudsGenerator.position;
         mountsStartPoint = mountsGenerator.position;
         btreeStartPoint = btreeGenerator.position;
         treeStartPoint = treeGenerator.position;
         grassStartPoint = grassGenerator.position;
+        grassStartPoint = grassGenerator.position;
 
         theScoreManager = FindObjectOfType<ScoreManager>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        GM = false;
+        theCatcher.gameObject.SetActive(false);
+        theDestroyer.gameObject.SetActive(true);
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         if ((Input.GetKey(KeyCode.R))) // Restart the game
         {
             Reset();
+        }
+
+        if ((Input.GetKey(KeyCode.G)))// Activate GODMODE 
+        {
+            if(GM == false) //Activate
+            {
+                theCatcher.gameObject.SetActive(true);
+                theDestroyer.gameObject.SetActive(false);
+                GM = true;
+            } else
+            {
+                theCatcher.gameObject.SetActive(false);
+                theDestroyer.gameObject.SetActive(true);
+                GM = false;
+            }
         }
 
         if ((Input.GetKey(KeyCode.P))) // Pause the game
@@ -64,7 +93,6 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 0f;
             pauseButton.SetActive(false);
         }
-
     }
 
     public void RestartGame()
@@ -87,10 +115,11 @@ public class GameManager : MonoBehaviour {
         {
             platformList[i].gameObject.SetActive(false);
         }
-
+        
         thePlayer.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         islandsGenerator.position = islandsStartPoint;
+        boatsGenerator.position = boatsStartPoint;
         cloudsGenerator.position = cloudsStartPoint;
         mountsGenerator.position = mountsStartPoint;
         btreeGenerator.position = btreeStartPoint;
@@ -103,7 +132,7 @@ public class GameManager : MonoBehaviour {
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
     }
-    
+
     /*public IEnumerator RestartGameCo()
     {
         theScoreManager.scoreIncreasing = false;

@@ -18,6 +18,9 @@ public class PlatformGenerator : MonoBehaviour {
 
     public ObjectPooler[] theObjectPools;
 
+    private CoinGenerator theCoinGenerator;
+    public float randomCoinThreshold;
+    
 
     // Use this for initialization
     void Start () {
@@ -52,6 +55,11 @@ public class PlatformGenerator : MonoBehaviour {
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
 
+            if(Random.Range(0f, 100f) < randomCoinThreshold)
+            {
+                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+            }
+                        
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
 
 

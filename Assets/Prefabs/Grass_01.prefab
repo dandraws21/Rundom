@@ -68,7 +68,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4762152768536416}
   - component: {fileID: 61305083170464050}
-  - component: {fileID: 114608450955859916}
   m_Layer: 0
   m_Name: Grass_01
   m_TagString: Untagged
@@ -182,8 +181,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317075579080144}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 1, z: -0.11358521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11, y: 0, z: 9.551502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4304030881403552}
@@ -246,18 +245,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114608450955859916
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1317075579080144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49f2fb05127557429d1af4d3e18a0b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlatformDestructionPoint: {fileID: 0}
 --- !u!212 &212126680390982348
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -467,7 +454,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1378060955
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f24bd820dfaf0774aa7e246fdd59a85c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

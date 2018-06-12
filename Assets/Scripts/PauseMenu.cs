@@ -9,18 +9,28 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject pauseButton;
 
+    private AudioSource clickSound;
+
+    void Start()
+    {
+        clickSound = GameObject.Find("ClickSound").GetComponent<AudioSource>();
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         pauseButton.SetActive(false);
 
+        clickSound.Play();
     }
     public void ResumeGame()
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
+
+        clickSound.Play();
     }
     public void RestartGame()
     {
@@ -28,11 +38,14 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
         FindObjectOfType<GameManager>().Reset();
+
+        clickSound.Play();
     }
     public void QuitToMain()
     {
         Time.timeScale = 1f;
         Application.LoadLevel(mainMenuLevel);
 
-    }   
+        clickSound.Play();
+    }
 }

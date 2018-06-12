@@ -60,6 +60,9 @@ TagManager:
   - name: Player
     uniqueID: 3325830235
     locked: 0
+  - name: Boat
+    uniqueID: 853520927
+    locked: 0
   - name: River
     uniqueID: 2979390119
     locked: 0

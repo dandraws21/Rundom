@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public PlayerControlls thePlayer;
+    private PlayerControlls thePlayer;
+
+    public int maxHeigh;
+    public int minHeigh;
 
     private Vector3 lastPlayerPosition;
     private float distanceToMove;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         thePlayer = FindObjectOfType<PlayerControlls>();
         lastPlayerPosition = thePlayer.transform.position;
 

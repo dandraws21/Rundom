@@ -22,15 +22,21 @@ public class PlayerControlls : MonoBehaviour {
 
     private bool stoppedJumping;
     public bool canDoubleJump;
-
-
+    
     private Rigidbody2D myRigidbody;
 
+    public bool falling;
     public bool grounded;
+
     public LayerMask whatIsGround;
     public Transform groundCheck;
     public float groundCheckRadius;
 
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+    public AudioSource runSound;
+    public AudioSource GameBSO;
+    public AudioSource DeathBSO;
 
     //private Collider2D myCollider;
 
@@ -40,6 +46,7 @@ public class PlayerControlls : MonoBehaviour {
 
     void Start()
     {
+
         myRigidbody = GetComponent<Rigidbody2D>();
         //myCollider = GetComponent<Collider2D> ();
 
@@ -62,6 +69,10 @@ public class PlayerControlls : MonoBehaviour {
         //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
+        runSound.Play();
+        GameBSO.Play();
+        DeathBSO.Stop();
+
         if (transform.position.x > speedMilestoneCount)
         {
             speedMilestoneCount += speedIncreaseMilestone;
@@ -78,6 +89,7 @@ public class PlayerControlls : MonoBehaviour {
             {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                 stoppedJumping = false;
+                jumpSound.Play();
             }
 
             if(!grounded && canDoubleJump)
@@ -87,6 +99,7 @@ public class PlayerControlls : MonoBehaviour {
 
                 stoppedJumping = false;
                 canDoubleJump = false;
+                jumpSound.Play();
             }
         }
 
@@ -103,6 +116,7 @@ public class PlayerControlls : MonoBehaviour {
         {
             jumpTimeCounter = 0;
             stoppedJumping = true;
+            runSound.Stop();
         }
 
         if (grounded)
@@ -111,8 +125,15 @@ public class PlayerControlls : MonoBehaviour {
             canDoubleJump = true;
         }
 
+        if (myRigidbody.velocity.y < 0)
+        {
+            falling = true;
+        }
+        else falling = false;
+
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
+        myAnimator.SetBool("Falling", falling);
     }
 
     void OnCollisionEnter2D (Collision2D other)
@@ -123,6 +144,10 @@ public class PlayerControlls : MonoBehaviour {
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMilestoneCountStore;
             speedIncreaseMilestoneStore = speedIncreaseMilestone;
+            runSound.Stop();
+            deathSound.Play();
+            GameBSO.Stop();
+            DeathBSO.Play();
         }
     }
 }
