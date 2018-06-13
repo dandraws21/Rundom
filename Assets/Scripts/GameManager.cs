@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour {
         thePlayer.gameObject.SetActive(true);
 
         theScoreManager.scoreCount = 0;
+        theScoreManager.distanceCount = 0;
         theScoreManager.scoreIncreasing = true;
     }
 

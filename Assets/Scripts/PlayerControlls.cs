@@ -68,11 +68,7 @@ public class PlayerControlls : MonoBehaviour {
     {
         //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
-        runSound.Play();
-        GameBSO.Play();
-        DeathBSO.Stop();
-
+    
         if (transform.position.x > speedMilestoneCount)
         {
             speedMilestoneCount += speedIncreaseMilestone;
@@ -90,6 +86,7 @@ public class PlayerControlls : MonoBehaviour {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                 stoppedJumping = false;
                 jumpSound.Play();
+                runSound.Play();
             }
 
             if(!grounded && canDoubleJump)

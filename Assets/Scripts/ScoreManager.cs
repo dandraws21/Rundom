@@ -22,9 +22,7 @@ public class ScoreManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        distanceCount = 0;
-
+        
         if(PlayerPrefs.HasKey("HighScore")) // Run Save data at game start
         {
             hiScoreCount = PlayerPrefs.GetFloat("HighScore");
@@ -39,6 +37,7 @@ public class ScoreManager : MonoBehaviour {
         {
             distanceCount += pointsPerSecond * Time.deltaTime;
             scoreCount += pointsPerSecond * Time.deltaTime;
+            distanceCount += pointsPerSecond * Time.deltaTime;
         }
 
         if(scoreCount > hiScoreCount)
