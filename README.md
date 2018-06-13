@@ -1,4 +1,4 @@
-![alt text](/WikiResources/RundomBanner.png)
+![](https://github.com/dandraws21/Rundom/blob/master/WikiResources/wiki/RundomLogo.png)
 
 **Synopsis**
 --------
